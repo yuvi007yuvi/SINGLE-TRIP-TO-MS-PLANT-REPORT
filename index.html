@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Trip Report - Ward Vehicles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img id="company-logo" src="LOGO.png" alt="Company Logo">
+    <img id="second-logo" src="CLIENT.png" alt="Client Logo">
+    <!-- <h1>Total Single Trip Vehicles</h1> -->
+    <div class="filter-controls">
+        <label for="circle-select">Select Circle:</label>
+        <span id="selected-circle-display">All Wards</span>
+        <select id="circle-select">
+            <option value="all">All Wards</option>
+
+            <option value="Bharat Circle">Bharat Circle</option>
+            <option value="Nishant Circle">Nishant Circle</option>
+            <option value="Rahul Circle">Rahul Circle</option>
+            <option value="Ranveer Circle">Ranveer Circle</option>
+        </select>
+    </div>
+    <div class="csv-upload-section" id="csv-upload-section">
+        <input type="file" id="csv-file-input" accept=".csv">
+        <button id="upload-csv-btn">Upload CSV</button>
+    </div>
+    <H1>Total Single Trip Vehicles: <span id="total-single-trip-vehicles">0</span></H1>
+    <div class="summary-details">
+        <h2>Summary</h2>
+        <br>
+        <div class="card">
+            <h3>Bharat Circle</h3>
+            <p><span id="bharat-circle-total">0</span></p>
+        </div>
+        <div class="card">
+            <h3>Nishant Circle</h3>
+            <p><span id="nishant-circle-total">0</span></p>
+        </div>
+        <div class="card">
+            <h3>Rahul Circle</h3>
+            <p><span id="rahul-circle-total">0</span></p>
+        </div>
+        <div class="card">
+            <h3>Ranveer Circle</h3>
+            <p><span id="ranveer-circle-total">0</span></p>
+
+        </div>
+        <div id="print-button-container"></div>
+        <div id="zonal-tables-container"></div>
+        <script src="script.js"></script>
+</body>
+
+</html>

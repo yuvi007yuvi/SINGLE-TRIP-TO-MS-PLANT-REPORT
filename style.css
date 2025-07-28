@@ -1,0 +1,182 @@
+
+
+/* Basic styling for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#company-logo {
+    max-width: 100px;
+    height: auto;
+    margin: 0 10px 20px 10px;
+}
+
+#second-logo {
+    max-width: 300px;
+    height: auto;
+    margin: 0 10px 20px 10px;
+}
+
+/* Container for logos to display them side-by-side */
+body>img {
+    display: inline-block;
+    /* Make images display inline */
+}
+
+h1 {
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.filter-controls label {
+    font-weight: bold;
+    color: #333;
+}
+
+.filter-controls select {
+    padding: 8px;
+
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#selected-circle-display {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #007bff;
+    margin-left: 10px;
+}
+
+
+
+#print-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#print-button:hover {
+    background-color: #45a049;
+}
+
+.summary-details {
+    margin: 20px;
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    min-width: 100px;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #0056b3;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 0;
+    background: linear-gradient(to right, #007bff, #00bfff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.summary-details h2 {
+    color: #343a40;
+    margin-bottom: 10px;
+}
+
+.report-container {
+    margin-bottom: 30px; /* Add space between tables */
+}
+
+.report-container h2 {
+    text-align: center;
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    font-size: 1.1em; /* Increased font size */
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    white-space: nowrap;
+    /* Prevent text wrapping in cells */
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+@media print {
+    .report-container {
+        page-break-after: always;
+    }
+    .report-container:last-child {
+        page-break-after: avoid;
+    }
+}
