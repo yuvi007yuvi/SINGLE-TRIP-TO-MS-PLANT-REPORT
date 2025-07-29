@@ -65,6 +65,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     renderTable(allEntries, vehicleTripCounts, event.target.value);
                 });
 
+                // Helper function to format time to AM/PM
+                function formatTime(timeString, entry) {
+                    if (!timeString) return '';
+                    const [hours, minutes] = timeString.split(':');
+                    const formattedHours = String(hours).padStart(2, '0');
+                    const formattedMinutes = String(minutes).padStart(2, '0');
+
+                    return `${formattedHours}:${formattedMinutes}`;
+                }
+
                 function renderTable(data, counts, selectedCircle = 'all') {
                     document.getElementById('selected-circle-display').textContent = selectedCircle === 'all' ? 'All Wards' : selectedCircle;
 
@@ -129,17 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     zonalTablesContainer.appendChild(tableContainer);
 
                     const currentTableBody = document.getElementById(`report-body-${circle.replace(/ /g, '-')}`);
-                    // Helper function to format time to AM/PM
-                    function formatTime(timeString) {
-                        if (!timeString) return '';
-                        const [hours, minutes] = timeString.split(':');
-                        let h = parseInt(hours, 10);
-                        const ampm = h >= 12 ? 'PM' : 'AM';
-                        h = h % 12;
-                        h = h ? h : 12; // the hour '0' should be '12'
-                        const m = minutes < 10 ? '0' + minutes : minutes;
-                        return `${h}:${m} ${ampm}`;
-                    }
+
 
                     let srNo = 1;
                     circleFilteredEntries.forEach(entry => {
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <td>${entry.vehicleNo}</td>
                             <td>${entry.vehicleType}</td>
                             <td>${entry.driverName}</td>
-                            <td>${formatTime(entry.inTime)}</td>
+                            <td>${formatTime(entry.inTime, entry)}</td>
                             <td>${entry.netWGT}</td>
                         `;
                         currentTableBody.appendChild(tr);
